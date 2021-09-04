@@ -1,16 +1,63 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addUser } from '../store/actions/user';
+import { setAlert } from '../store/actions/alert';
+import { Redirect, Link } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
 class Register extends Component {
+  constructor() {
+    super();
+    this.state = {
+      username: '',
+      password: '',
+      passwordConfirm: '',
+      successfulSignup: false,
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ successfulSignup: false });
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    const { username, password, passwordConfirm } = this.state;
+    const { setAlertAction, addUserAction } = this.props;
+    if (!username || !password || !passwordConfirm) {
+      return setAlertAction('error', 'Please fill all required fields');
+    }
+    if (password !== passwordConfirm) {
+      return setAlertAction('error', 'Passwords do not match');
+    }
+    const res = await addUserAction({ username, password });
+    if (res.success) {
+      this.setState({ successfulSignup: true });
+      setAlertAction('success', 'Successfully registered');
+    } else {
+      setAlertAction('error', 'Registration failed');
+    }
+  };
+
   render() {
+    const { username, password, passwordConfirm, successfulSignup } =
+      this.state;
+    if (successfulSignup) {
+      return <Redirect to="/login" />;
+    }
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -35,10 +82,11 @@ class Register extends Component {
                   variant="outlined"
                   required
                   fullWidth
-                  id="username"
                   label="Username"
                   name="username"
                   autoComplete="username"
+                  value={username}
+                  onChange={this.handleChange}
                   autoFocus
                 />
               </Grid>
@@ -50,7 +98,8 @@ class Register extends Component {
                   name="password"
                   label="Password"
                   type="password"
-                  id="password"
+                  value={password}
+                  onChange={this.handleChange}
                   autoComplete="current-password"
                 />
               </Grid>
@@ -59,10 +108,11 @@ class Register extends Component {
                   variant="outlined"
                   required
                   fullWidth
-                  name="confirm-password"
+                  value={passwordConfirm}
+                  onChange={this.handleChange}
+                  name="passwordConfirm"
                   label="Confirm Password"
                   type="password"
-                  id="confirm-password"
                   autoComplete="current-password"
                 />
               </Grid>
@@ -72,13 +122,14 @@ class Register extends Component {
               fullWidth
               variant="contained"
               color="primary"
+              onClick={this.handleSubmit}
               style={{ margin: '3rem 0 2rem' }}
             >
-              Sign Up
+              Register
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link to="/login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
@@ -90,4 +141,12 @@ class Register extends Component {
   }
 }
 
-export default Register;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addUserAction: (body) => dispatch(addUser(body)),
+    setAlertAction: (severity, message) =>
+      dispatch(setAlert(severity, message)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Register);

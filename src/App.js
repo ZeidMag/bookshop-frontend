@@ -7,7 +7,7 @@ import Authors from './pages/Authors/Authors';
 import Management from './pages/Management/Management';
 import Profile from './pages/Profile/Profile';
 import Rental from './pages/Rental';
-import Register from './tempUIpages/Register';
+import Register from './pages/Register';
 import Login from './pages/Login';
 import './App.css';
 // import SingleBook from './pages/SingleBook';

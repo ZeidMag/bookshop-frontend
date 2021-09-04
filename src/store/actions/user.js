@@ -72,6 +72,21 @@ export const getUser = (id) => {
   };
 };
 
+export const addUser = (body) => {
+  return async (dispatch) => {
+    const res = await postRequest('http://localhost/bookshop/users/add', body);
+    if (res?.data?.success) {
+      return { success: true };
+    } else {
+      dispatch({
+        type: USER_LOADING_ERROR,
+        payload: res?.data?.message,
+      });
+      return { success: false, msg: res?.data?.message };
+    }
+  };
+};
+
 export const editUser = (id, body) => {
   return async (dispatch) => {
     const res = await patchRequest(
