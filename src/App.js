@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Provider from './store/Provider';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Layout from './layout';
+import Books from './pages/Books';
+import Authors from './pages/Authors/Authors';
+import Management from './pages/Management/Management';
+import Profile from './pages/Profile/Profile';
+import Rental from './pages/Rental';
+import Register from './tempUIpages/Register';
+import Login from './pages/Login';
 import './App.css';
+// import SingleBook from './pages/SingleBook';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Provider>
+          <Layout>
+            <Switch>
+              <Route exact path="/" component={Books} />
+              {/* <Route path="/book/:id" component={SingleBook} /> */}
+              <Route path="/author" component={Authors} />
+              <Route path="/management" component={Management} />
+              <Route path="/profile" component={Profile} />
+              <Route path="/rental" component={Rental} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+            </Switch>
+          </Layout>
+        </Provider>
+      </Router>
+    );
+  }
 }
 
 export default App;

@@ -1,0 +1,9 @@
+.books-container {
+  padding: 2rem 0;
+}
+
+@media (min-width: 1280px) {
+  .books-container {
+    max-width: 85% !important;
+  }
+}

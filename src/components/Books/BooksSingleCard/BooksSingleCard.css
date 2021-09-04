@@ -1,0 +1,18 @@
+.book-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.book-title {
+  text-align: center;
+  min-height: 3rem;
+  font-size: 1.5rem !important;
+}
+
+.book-details {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  text-align: center;
+}

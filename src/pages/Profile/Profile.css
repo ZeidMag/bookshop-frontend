@@ -1,0 +1,40 @@
+.profile-main {
+  margin: 1rem auto;
+  width: min(75%, 900px);
+  /* background-color: red; */
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.profile-modify {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.profile-modify__username {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.profile-modify__password {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.view-rented-books {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
