@@ -2,7 +2,7 @@
 import { setUser } from '../store/actions/user';
 import { connect } from 'react-redux';
 import Navbar from './Navbar';
-import Alert from '../utility/Alert';
+import Alert from '../utility/components/Alert';
 import Footer from './Footer';
 
 const Main = (props) => {

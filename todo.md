@@ -1,27 +1,21 @@
 ## Front end Todos:
 
-- Add private routes that can be accessed only with user object set
-
 ---
 
-## Update API responses to account for new response structure
+- setUser ?? (done)
 
-$$
-(res.data.success) ? res.data.data : res.data.message
-$$
+- fix addRentalAction in /pages/Books.js to dynamically read (done)
 
-**DONE**
+- handle user edit (update username / update password) update only user reducer (done)
 
----
+- handle rent add (update rent reducer) (done)
 
-## After login, save user in session or local storage, and check session after reload, delete session on logout
+- handle login (update user & rent reducer) (done)
 
----
+- handle reading rents (done)
 
-<!-- - Book Rent read user id -->
-<!-- - Book Rent close modal after successful rent -->
-<!-- - Previous Rent books handle through Profile page (Swap rent button with period and how many days left ...etc) -->
+- handle book loading 0
 
-- Loading Screen
-<!-- - Change username & password in profile -->
-- Create Account Handle and routing
+- handle rental history loading 0
+
+- handle registeration (done)

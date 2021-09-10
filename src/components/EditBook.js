@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getBooks, editBook } from '../store/actions/books';
 import { getAuthors } from '../store/actions/authors';
 import { setAlert } from '../store/actions/alert';
-import { validImageURL } from '../utility/Regex';
+import { validImageURL } from '../utility/functions/Regex';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Select from '@material-ui/core/Select';

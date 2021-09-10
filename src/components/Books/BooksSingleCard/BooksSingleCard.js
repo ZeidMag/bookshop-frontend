@@ -38,7 +38,7 @@ class BooksSingleCard extends Component {
   };
 
   render() {
-    const { book, mediumSize = 3, user } = this.props;
+    const { book, mediumSize = 3, user, created, duration } = this.props;
     return (
       <Grid item xs={12} sm={6} md={mediumSize} style={{ margin: '1rem auto' }}>
         <Card className="book-card">
@@ -59,14 +59,14 @@ class BooksSingleCard extends Component {
             </Typography>
           </CardContent>
           <div className="book-details">
-            <Typography>Author: {book?.author.name}</Typography>
+            <Typography>Author: {book?.author?.name}</Typography>
             <Divider variant="middle" />
             <Typography>Pages: {book?.pages}</Typography>
             <Divider variant="middle" />
             <Typography>Published: {book?.publish_year}</Typography>
           </div>
 
-          {book.duration_days ? (
+          {duration ? (
             <div className="flex column align-items-center">
               <Divider variant="middle" style={{ margin: '2rem 0' }} />
               <Typography variant="h5" component="h5">
@@ -74,25 +74,23 @@ class BooksSingleCard extends Component {
               </Typography>
               <Typography variant="h6" component="h6">
                 Start:
-                <Moment format="YYYY-MM-DD">{book.created}</Moment>{' '}
+                <Moment format="YYYY-MM-DD">{created}</Moment>{' '}
               </Typography>
               <Typography variant="h6" component="h6">
-                Duration: {book.duration_days} days
+                Duration: {duration} days
               </Typography>
               <Typography variant="h6" component="h6">
                 End:
                 <Moment
-                  date={moment(book.created).add(book.duration_days, 'd')}
+                  date={moment(created).add(duration, 'd')}
                   format="YYYY-MM-DD"
                 >
-                  {book.created}
+                  {created}
                 </Moment>{' '}
               </Typography>
               <div>
                 {new Date().toJSON().slice(0, 10).replace(/-/g, '-') >=
-                moment(book.created)
-                  .add(book.duration_days, 'd')
-                  .format('YYYY-mm-dd') ? (
+                moment(created).add(duration, 'd').format('YYYY-mm-dd') ? (
                   <Typography
                     variant="h6"
                     component="h6"

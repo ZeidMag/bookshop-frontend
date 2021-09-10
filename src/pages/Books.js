@@ -4,7 +4,7 @@ import { getBooks } from '../store/actions/books';
 import { addRent } from '../store/actions/rents';
 import Hero from '../components/Books/Hero';
 import BooksCards from '../components/Books/BooksCards/BooksCards';
-import LoadingSpinner from '../utility/LoadingSpinner';
+import LoadingSpinner from '../utility/components/LoadingSpinner';
 
 export class Books extends Component {
   constructor() {
@@ -52,13 +52,6 @@ export class Books extends Component {
     // }
   };
 
-  handleSubmit = async (e) => {
-    // add new rental
-    e.preventDefault();
-    const { addRentalAction } = this.props;
-    await addRentalAction(1, 19, 11);
-  };
-
   handleChange = (e) => {
     this.setState({ searchText: e.target.value });
   };
@@ -86,7 +79,7 @@ export class Books extends Component {
             handleChange={this.handleChange}
             searchText={this.state.searchText}
           />
-          <div>{booksError}</div>;
+          <div>{booksError}</div>
         </>
       );
     }
