@@ -7,7 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import LoadingSpinner from '../../utility/LoadingSpinner';
+import LoadingSpinner from '../../utility/components/LoadingSpinner';
 import './Authors.css';
 
 class Authors extends Component {
@@ -32,10 +32,42 @@ class Authors extends Component {
     const { isLoading } = this.state;
     const { authorList } = this.props;
     if (isLoading) {
-      return <LoadingSpinner />;
+      return (
+        <>
+          <Typography
+            component="h1"
+            variant="h2"
+            align="center"
+            color="textPrimary"
+            gutterBottom
+            className="gradient__text font-anton"
+            style={{ fontSize: '5.5rem' }}
+          >
+            Authors
+          </Typography>
+          <LoadingSpinner />;
+        </>
+      );
     }
     if (!authorList?.length) {
-      return <div>No Authors</div>;
+      return (
+        <>
+          <>
+            <Typography
+              component="h1"
+              variant="h2"
+              align="center"
+              color="textPrimary"
+              gutterBottom
+              className="gradient__text font-anton"
+              style={{ fontSize: '5.5rem' }}
+            >
+              Authors
+            </Typography>
+          </>
+          <div>No Authors</div>;
+        </>
+      );
     }
     return (
       <List
@@ -47,16 +79,25 @@ class Authors extends Component {
         }}
       >
         <Typography
-          variant="h6"
+          component="h1"
+          variant="h2"
+          align="center"
+          color="textPrimary"
           gutterBottom
-          className="authors_title gradient__text"
+          className="gradient__text font-anton"
+          style={{ fontSize: '5.5rem' }}
         >
           Authors
         </Typography>
         {authorList.map((author) => {
           const labelId = `checkbox-list-secondary-label-${author.name}`;
           return (
-            <ListItem key={author.id} button style={{ textAlign: 'center' }}>
+            <ListItem
+              key={author.id}
+              button
+              className="font-bebas"
+              style={{ textAlign: 'center' }}
+            >
               <ListItemAvatar>
                 <Avatar
                   alt={author.name}

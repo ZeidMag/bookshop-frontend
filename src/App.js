@@ -6,11 +6,9 @@ import Books from './pages/Books';
 import Authors from './pages/Authors/Authors';
 import Management from './pages/Management/Management';
 import Profile from './pages/Profile/Profile';
-import Rental from './pages/Rental';
 import Register from './pages/Register';
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
 import './App.css';
-// import SingleBook from './pages/SingleBook';
 
 export class App extends Component {
   render() {
@@ -24,7 +22,7 @@ export class App extends Component {
               <Route path="/author" component={Authors} />
               <Route path="/management" component={Management} />
               <Route path="/profile" component={Profile} />
-              <Route path="/rental" component={Rental} />
+              {/* <Route path="/rental" component={Rental} /> */}
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
             </Switch>

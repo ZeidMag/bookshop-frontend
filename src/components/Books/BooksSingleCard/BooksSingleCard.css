@@ -5,14 +5,27 @@
   justify-content: space-between;
   padding: 1rem 0;
 }
+.card-text-container {
+  width: 80%;
+  margin: 0 auto;
+}
 .book-title {
   text-align: center;
   min-height: 3rem;
-  font-size: 1.5rem !important;
+  font-size: 2rem !important;
 }
 
 .book-details {
   margin: 0 auto;
   padding: 0 0.5rem;
-  text-align: center;
+  /* text-align: center; */
+}
+
+.rent-action {
+  margin: 0.5rem auto;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #ddd;
+  padding: 0 !important;
+  border-radius: 10px;
 }

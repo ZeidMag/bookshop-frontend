@@ -1,0 +1,13 @@
+.login-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.login-left-section,
+.login-right-section {
+  width: 100%;
+}
+
+.login-left-section {
+  background-color: red;
+}

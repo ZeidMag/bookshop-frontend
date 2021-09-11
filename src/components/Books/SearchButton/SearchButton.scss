@@ -1,5 +1,5 @@
 :root {
-  --clr-primary: #71ee52;
+  // --clr-primary: #71ee52;
   --clr-body: #333;
   --clr-bg: #ddd;
 }
@@ -14,7 +14,7 @@
 
 .search {
   --size: 60px;
-  border: 2px solid var(--clr-primary);
+  border: 2px solid hsl(107, 32%, 50%);
   display: flex;
   border-radius: 100px;
   overflow: hidden;
@@ -34,7 +34,7 @@
   outline: 0;
   z-index: 2;
   position: absolute;
-  font-size: 2rem;
+  font-size: 1.5rem;
   top: 0;
   bottom: 0;
   left: 0;

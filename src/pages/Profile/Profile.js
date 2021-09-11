@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getUser, editUser } from '../../store/actions/user';
+import { editUser } from '../../store/actions/user';
 import { getBooks } from '../../store/actions/books';
 import { setAlert } from '../../store/actions/alert';
 import RentedBooksList from '../../components/RentedBooksList';
-import LoadingSpinner from '../../utility/LoadingSpinner';
+import LoadingSpinner from '../../utility/components/LoadingSpinner';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import Moment from 'react-moment';
@@ -40,7 +40,6 @@ export class Profile extends Component {
     if (res.success) {
       setAlertAction('success', 'Username changed successfully');
       this.setState({ newUsername: '' });
-      await this.fetchInfo();
     } else {
       setAlertAction('error', `Username change failed ${res.msg}`);
     }
@@ -60,7 +59,6 @@ export class Profile extends Component {
     if (res.success) {
       setAlertAction('success', 'password changed successfully');
       this.setState({ newPassword: '', newPasswordConfirm: '' });
-      await this.fetchInfo();
     } else {
       setAlertAction('error', `Password change failed ${res.msg}`);
     }
@@ -107,7 +105,6 @@ export class Profile extends Component {
           </Typography>
           <article className="profile-modify__username">
             <TextField
-              id="outlined-basic"
               name="newUsername"
               label="Username"
               variant="outlined"
@@ -130,18 +127,18 @@ export class Profile extends Component {
           </Typography>
           <article className="profile-modify__password">
             <TextField
-              id="outlined-basic"
               name="newPassword"
               label="Password"
+              type="password"
               variant="outlined"
               value={newPassword}
               onChange={this.handleChange}
               style={{ width: '100%' }}
             />
             <TextField
-              id="outlined-basic"
               name="newPasswordConfirm"
               label="Confirm Password"
+              type="password"
               variant="outlined"
               value={newPasswordConfirm}
               onChange={this.handleChange}
@@ -185,7 +182,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getUserAction: (userId) => dispatch(getUser(userId)),
     editUserAction: (userId, user) => dispatch(editUser(userId, user)),
     getBooksAction: () => dispatch(getBooks()),
     setAlertAction: (severity, message) =>
