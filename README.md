@@ -1,4 +1,4 @@
-# Bookshop Application Backend (PHP CakePHP)
+# Bookshop Application Frontend (ReactJS)
 
 ### Live project [https://zeidmagboub.ly](https://zeidmagboub.ly)
 
@@ -30,22 +30,6 @@ The user of the application can:
 6. Update profile (username / password).
 7. Review rent history.
 
-## `Backend Features:`
-
-The **`server`** is built with _CakePHP framework_, containing:
-
-- CRUD operations
-- Passowrd encryption
-- Authentication system
-- Custom JSON responses
-
-The **`database`** is built with _MySQL_, containing:
-
-- Books, Authors, Rents & Users tables.
-- Rent table has a composite key consists of User & Book ids.
-
-To review the database schema, please refer to the file `db-tables.sql`.
-
 ## `Frontend Features:`
 
 The **`frontend`** is built with _ReactJS_ and _MaterialUI_ library containing:
@@ -61,6 +45,22 @@ The **`frontend`** is built with _ReactJS_ and _MaterialUI_ library containing:
 The **`frontend`** also features a **custom search bar**, **custom scrollbar**, reusable **Alert** & **Spinner** components, reusable **API call handler** as well as a **Regex validator**.
 
 `Styling` is done with **MaterialUI**, **SASS**, **Inline-CSS** and **CSS files**.
+
+## `Backend Features:`
+
+The **`server`** is built with _CakePHP framework_, containing:
+
+- CRUD operations
+- Passowrd encryption
+- Authentication system
+- Custom JSON responses
+
+The **`database`** is built with _MySQL_, containing:
+
+- Books, Authors, Rents & Users tables.
+- Rent table has a composite key consists of User & Book ids.
+
+To review the database schema, please refer to the file `/bookshopCakeV4/db-tables.sql`.
 
 ---
 
