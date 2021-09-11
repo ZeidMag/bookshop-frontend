@@ -8,6 +8,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import LoadingSpinner from '../../utility/components/LoadingSpinner';
+import noConnection from '../../assets/images/no-connection.png';
 import './Authors.css';
 
 class Authors extends Component {
@@ -65,7 +66,9 @@ class Authors extends Component {
               Authors
             </Typography>
           </>
-          <div>No Authors</div>;
+          <div className="flex justify-center">
+            <img src={noConnection} alt="no connection" />
+          </div>
         </>
       );
     }

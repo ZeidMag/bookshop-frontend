@@ -71,6 +71,10 @@ html::-webkit-scrollbar-track:hover {
   justify-content: space-evenly;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .align-items-center {
   align-items: center;
 }

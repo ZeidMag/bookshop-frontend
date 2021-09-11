@@ -21,9 +21,26 @@
 .profile-modify__username {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
   gap: 1rem;
+}
+
+.dotted-container {
+  width: 100%;
+  border: 1px dotted var(--primary-color);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.dotted-container__profile-info {
+  width: min(95%, 400px);
+  border: 1px dotted var(--primary-color);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 1rem;
 }
 
 .profile-modify__password {

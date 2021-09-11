@@ -11,6 +11,8 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import loginImage from '../assets/images/login-image.jpg';
+import './Login/Login.css';
 
 class Register extends Component {
   constructor() {
@@ -59,84 +61,104 @@ class Register extends Component {
       return <Redirect to="/login" />;
     }
     return (
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            margin: '6rem 0',
-          }}
-        >
-          <Avatar style={{ backgroundColor: '#f50057', margin: '8px' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-          <form style={{ width: '100%', marginTop: '8px' }} noValidate>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  label="Username"
-                  name="username"
-                  autoComplete="username"
-                  value={username}
-                  onChange={this.handleChange}
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  value={password}
-                  onChange={this.handleChange}
-                  autoComplete="current-password"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  value={passwordConfirm}
-                  onChange={this.handleChange}
-                  name="passwordConfirm"
-                  label="Confirm Password"
-                  type="password"
-                  autoComplete="current-password"
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              onClick={this.handleSubmit}
-              style={{ margin: '3rem 0 2rem' }}
+      <main className="login-container">
+        <section className="login-left-section">
+          <Container component="main" maxWidth="xs">
+            <CssBaseline />
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                margin: '6rem 0',
+              }}
             >
-              Register
-            </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link to="/login" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
-          </form>
-        </div>
-      </Container>
+              <Avatar
+                style={{
+                  backgroundColor: '#ccc',
+                  margin: '8px',
+                  height: '55px',
+                  width: '55px',
+                }}
+              >
+                <LockOutlinedIcon />
+              </Avatar>
+              <Typography component="h1" variant="h5" className="font-bebas">
+                Sign up
+              </Typography>
+              <form style={{ width: '100%', marginTop: '8px' }} noValidate>
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    <TextField
+                      variant="outlined"
+                      required
+                      fullWidth
+                      label="Username"
+                      name="username"
+                      autoComplete="username"
+                      value={username}
+                      onChange={this.handleChange}
+                      autoFocus
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      variant="outlined"
+                      required
+                      fullWidth
+                      name="password"
+                      label="Password"
+                      type="password"
+                      value={password}
+                      onChange={this.handleChange}
+                      autoComplete="current-password"
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      variant="outlined"
+                      required
+                      fullWidth
+                      value={passwordConfirm}
+                      onChange={this.handleChange}
+                      name="passwordConfirm"
+                      label="Confirm Password"
+                      type="password"
+                      autoComplete="current-password"
+                    />
+                  </Grid>
+                </Grid>
+                <div className="flex justify-center">
+                  <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                    onClick={this.handleSubmit}
+                    style={{
+                      margin: '3rem auto',
+                      backgroundColor: 'var(--secondary-color)',
+                      width: '10rem',
+                    }}
+                  >
+                    Register
+                  </Button>
+                </div>
+                <Grid container justifyContent="flex-end">
+                  <Grid item>
+                    <Link to="/login" variant="body2">
+                      Already have an account? Sign in
+                    </Link>
+                  </Grid>
+                </Grid>
+              </form>
+            </div>
+          </Container>
+        </section>
+        <section className="login-right-section">
+          <img src={loginImage} alt="bookshelf" />
+        </section>
+      </main>
     );
   }
 }

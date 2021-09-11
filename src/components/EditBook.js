@@ -194,7 +194,7 @@ export class EditBook extends Component {
             value={imageUrl}
             onChange={this.handleChange}
           />
-          <Button
+          {/* <Button
             type="submit"
             value="Submit"
             disabled={!editedBook}
@@ -203,7 +203,22 @@ export class EditBook extends Component {
             fullWidth
           >
             EDIT
-          </Button>
+          </Button> */}
+          <div className="flex justify-center">
+            <Button
+              type="submit"
+              value="Submit"
+              disabled={!editedBook}
+              variant="contained"
+              style={{
+                margin: '1rem auto',
+                backgroundColor: 'var(--secondary-color)',
+                width: '10rem',
+              }}
+            >
+              EDIT
+            </Button>
+          </div>
         </form>
       </div>
     );

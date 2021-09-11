@@ -106,7 +106,7 @@ export class EditAuthor extends Component {
               value={author}
               onChange={this.handleChange}
             />
-            <Button
+            {/* <Button
               type="submit"
               value="Submit"
               disabled={!editedAuthor}
@@ -116,7 +116,24 @@ export class EditAuthor extends Component {
               style={{ padding: '1em', marginTop: '6px', width: '30%' }}
             >
               EDIT
-            </Button>
+            </Button> */}
+            <div className="flex justify-center">
+              <Button
+                type="submit"
+                value="Submit"
+                disabled={!editedAuthor}
+                variant="contained"
+                style={{
+                  margin: 'auto',
+                  padding: '1em',
+                  marginTop: '0.4rem',
+                  backgroundColor: 'var(--secondary-color)',
+                  width: '30%',
+                }}
+              >
+                EDIT
+              </Button>
+            </div>
           </div>
         </form>
       </div>

@@ -8,6 +8,7 @@ import Management from './pages/Management/Management';
 import Profile from './pages/Profile/Profile';
 import Register from './pages/Register';
 import Login from './pages/Login/Login';
+import PrivateRoute from './utility/components/PrivateRoute';
 import './App.css';
 
 export class App extends Component {
@@ -18,11 +19,10 @@ export class App extends Component {
           <Layout>
             <Switch>
               <Route exact path="/" component={Books} />
-              {/* <Route path="/book/:id" component={SingleBook} /> */}
               <Route path="/author" component={Authors} />
-              <Route path="/management" component={Management} />
+              <PrivateRoute path="/management" component={Management} />
+              {/* <PrivateRoute path="/profile" component={Profile} /> */}
               <Route path="/profile" component={Profile} />
-              {/* <Route path="/rental" component={Rental} /> */}
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
             </Switch>

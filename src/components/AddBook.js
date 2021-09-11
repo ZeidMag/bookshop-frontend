@@ -146,7 +146,7 @@ export class AddBook extends Component {
           value={imageUrl}
           onChange={this.handleChange}
         />
-        <Button
+        {/* <Button
           type="submit"
           value="Submit"
           variant="contained"
@@ -154,7 +154,21 @@ export class AddBook extends Component {
           fullWidth
         >
           Add
-        </Button>
+        </Button> */}
+        <div className="flex justify-center">
+          <Button
+            type="submit"
+            value="Submit"
+            variant="contained"
+            style={{
+              margin: '1rem auto',
+              backgroundColor: 'var(--secondary-color)',
+              width: '10rem',
+            }}
+          >
+            Add
+          </Button>
+        </div>
       </form>
     );
   }

@@ -2,25 +2,43 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BooksSingleCard from './Books/BooksSingleCard/BooksSingleCard';
 import Grid from '@material-ui/core/Grid';
+import { Link } from 'react-router-dom';
 
 export class RentedBooksList extends Component {
   render() {
     const { rents } = this.props;
     return (
-      <Grid container style={{ width: '100%', marginTop: '2rem' }}>
-        {rents?.length
-          ? rents.map((rent, index) => (
+      <>
+        {rents?.length ? (
+          rents.map((rent, index) => (
+            <Grid container style={{ width: '70vw', marginTop: '2rem' }}>
               <BooksSingleCard
-                mediumSize={8}
+                mediumSize={6}
                 style={{ marginTop: '2rem' }}
                 key={index}
                 book={rent.book}
                 created={rent.created}
                 duration={rent.duration_days}
               />
-            ))
-          : ''}
-      </Grid>
+            </Grid>
+          ))
+        ) : (
+          <div
+            className="flex column justify-center"
+            style={{ textAlign: 'center' }}
+          >
+            <h1>
+              You have no rented books, go to books page and start renting !
+            </h1>
+            <Link
+              to="/"
+              style={{ textAlign: 'center', textDecoration: 'none' }}
+            >
+              Books Page
+            </Link>
+          </div>
+        )}
+      </>
     );
   }
 }

@@ -21,10 +21,12 @@ const Main = (props) => {
   }
   return (
     <>
-      <Navbar />
-      {props.children}
-      <Alert />
-      <Footer />
+      <div className="flex column" style={{ minHeight: '100vh' }}>
+        <Navbar />
+        {props.children}
+        <Alert />
+        <Footer />
+      </div>
     </>
   );
 };

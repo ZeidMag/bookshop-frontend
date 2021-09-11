@@ -5,18 +5,9 @@ import { addRent } from '../store/actions/rents';
 import Hero from '../components/Books/Hero';
 import BooksCards from '../components/Books/BooksCards/BooksCards';
 import LoadingSpinner from '../utility/components/LoadingSpinner';
+import noConnection from '../assets/images/no-connection.png';
 
 //temp
-import BooksSingleCard from '../components/Books/BooksSingleCard/BooksSingleCard';
-const tempBook = {
-  title: 'React JS Notes for Professionals',
-  pages: 10,
-  publish_year: 2018,
-  image_url: 'https://itbook.store/img/books/1001629286154.png',
-  author: {
-    name: 'Stack Overflow Contributors',
-  },
-};
 
 export class Books extends Component {
   constructor() {
@@ -57,11 +48,6 @@ export class Books extends Component {
     this.setState({ isLoading: true });
     await getBooksAction();
     this.setState({ isLoading: false, filteredBookList: this.props.bookList });
-    // if (this?.props?.books?.length) {
-    //   this.setState({
-    //     filteredBookList: this.props.books,
-    //   });
-    // }
   };
 
   handleChange = (e) => {
@@ -91,8 +77,9 @@ export class Books extends Component {
             handleChange={this.handleChange}
             searchText={this.state.searchText}
           />
-          <div>{booksError}</div>
-          <BooksSingleCard book={tempBook} />
+          <div className="flex justify-center">
+            <img src={noConnection} alt="no connection" />
+          </div>
         </>
       );
     }

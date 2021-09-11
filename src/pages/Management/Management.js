@@ -10,7 +10,6 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Divider from '@material-ui/core/Divider';
-import { Redirect } from 'react-router-dom';
 import './Management.css';
 
 class Management extends Component {
@@ -21,13 +20,17 @@ class Management extends Component {
     };
   }
   render() {
-    const { user } = this.props;
-    if (!user) {
-      return <Redirect to="/login" />;
-    }
     return (
       <div className="management-container">
-        <Typography variant="h2" component="h3" className="gradient__text">
+        <Typography
+          component="h1"
+          variant="h2"
+          align="center"
+          color="textPrimary"
+          gutterBottom
+          className="gradient__text font-anton"
+          style={{ fontSize: '4.5rem' }}
+        >
           Books
         </Typography>
         <Accordion>
@@ -36,7 +39,7 @@ class Management extends Component {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>Add Book</Typography>
+            <Typography className="font-bebas">Add Book</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <AddBook />
@@ -48,14 +51,22 @@ class Management extends Component {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>Edit Book</Typography>
+            <Typography className="font-bebas">Edit Book</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <EditBook />
           </AccordionDetails>
         </Accordion>
         <Divider variant="middle" style={{ margin: '2rem 0' }} />
-        <Typography variant="h2" component="h3" className="gradient__text">
+        <Typography
+          component="h1"
+          variant="h2"
+          align="center"
+          color="textPrimary"
+          gutterBottom
+          className="gradient__text font-anton"
+          style={{ fontSize: '4.5rem' }}
+        >
           Authors
         </Typography>
         <Accordion>
@@ -64,7 +75,7 @@ class Management extends Component {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography>Add Author</Typography>
+            <Typography className="font-bebas">Add Author</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <AddAuthor />
@@ -76,7 +87,7 @@ class Management extends Component {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography>Edit Author</Typography>
+            <Typography className="font-bebas">Edit Author</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <EditAuthor />
@@ -89,7 +100,6 @@ class Management extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user.user,
     bookList: state.books.bookList,
   };
 };
