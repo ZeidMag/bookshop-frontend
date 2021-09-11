@@ -6,6 +6,18 @@ import Hero from '../components/Books/Hero';
 import BooksCards from '../components/Books/BooksCards/BooksCards';
 import LoadingSpinner from '../utility/components/LoadingSpinner';
 
+//temp
+import BooksSingleCard from '../components/Books/BooksSingleCard/BooksSingleCard';
+const tempBook = {
+  title: 'React JS Notes for Professionals',
+  pages: 10,
+  publish_year: 2018,
+  image_url: 'https://itbook.store/img/books/1001629286154.png',
+  author: {
+    name: 'Stack Overflow Contributors',
+  },
+};
+
 export class Books extends Component {
   constructor() {
     super();
@@ -80,6 +92,7 @@ export class Books extends Component {
             searchText={this.state.searchText}
           />
           <div>{booksError}</div>
+          <BooksSingleCard book={tempBook} />
         </>
       );
     }

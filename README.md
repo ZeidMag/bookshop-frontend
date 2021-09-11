@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Bookshop Application Backend (PHP CakePHP)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Live project [https://zeidmagboub.ly](https://zeidmagboub.ly)
 
-## Available Scripts
+### Frontend repo [https://github.com/ZeidMag/bookshop-frontend](https://github.com/ZeidMag/bookshop-frontend/tree/cakeV4changes)
 
-In the project directory, you can run:
+### Backend repo [https://github.com/ZeidMag/bookshop](https://github.com/ZeidMag/bookshopCakeV4)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## `Purpose:`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The project serves to demonstrate knowledge of (**ReactJS** + **CakePHP** + **MySQL**) `Stack`.
 
-### `npm test`
+## `Description:`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is a simple application for a bookshop, utilizing the following:
 
-### `npm run build`
+- [ReactJS](https://reactjs.org/)
+- [CakePHP](https://cakephp.org/)
+- [MySQL](https://www.mysql.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The user of the application can:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. View all books & authors.
+2. Search Books.
+3. Login / Logout.
+4. Add / Edit Books & Authors.
+5. Rent a Book.
+6. Update profile (username / password).
+7. Review rent history.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## `Backend Features:`
 
-### `npm run eject`
+The **`server`** is built with _CakePHP framework_, containing:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- CRUD operations
+- Passowrd encryption
+- Authentication system
+- Custom JSON responses
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The **`database`** is built with _MySQL_, containing:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Books, Authors, Rents & Users tables.
+- Rent table has a composite key consists of User & Book ids.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To review the database schema, please refer to the file `db-tables.sql`.
 
-## Learn More
+## `Frontend Features:`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The **`frontend`** is built with _ReactJS_ and _MaterialUI_ library containing:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React Class & Function components.
+- Redux State management.
+- Redux Thunk middleware.
+- Axios HTTP client.
+- MomentJS date handler.
+- React-router-dom routing handler.
+- MaterialUI components.
 
-### Code Splitting
+The **`frontend`** also features a **custom search bar**, **custom scrollbar**, reusable **Alert** & **Spinner** components, reusable **API call handler** as well as a **Regex validator**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`Styling` is done with **MaterialUI**, **SASS**, **Inline-CSS** and **CSS files**.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## `User Walkthrough:`
 
-### Making a Progressive Web App
+When accessing the [application](https://zeidmagboub.ly/bookshop), the user is presented with **Books page** that features a list of books along with details about each book such as (author name / number of pages ...etc) along with the ability to search the books list by inserting book name or author name.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Next tab is the list of **Authors page**, and the last tab is to login.
 
-### Advanced Configuration
+In order to rent a book you must login first through **Login page**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+You can register through **Registration page** login afterwards, alternatively you can use the following credentials:
 
-### Deployment
+```
+username: test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+password: 123
+```
 
-### `npm run build` fails to minify
+Once logged in, you can go back to the **Books page** on the navbar and rent a book.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Additionally, two more tabs will appear, one is a **Management page** tab to add / edit books and authors, and the other is a drop down menu that leads to either **Logout action** or **Profile page**.
+
+Profile page will allow you to _update_ your username and password and _review_ rent history (if any).
+
+---
+
+## `Possible Future Improvements:`
+
+As the project's main purpose is to demonstrate konwledge rather than to be a full-fledged application, there are some features left out that can further improve the project:
+
+- Restrict resource editing (books & authors) to only their creator adding user id to each book & author applying relavent checks.
+- Introduce authorization levels.
+- Improve UI/UX.

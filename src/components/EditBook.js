@@ -26,8 +26,6 @@ export class EditBook extends Component {
 
   componentDidMount() {
     this.fetchData();
-
-    //todo: populate fields with relavent values
   }
 
   fetchData = async () => {
@@ -70,9 +68,7 @@ export class EditBook extends Component {
         publishYear: 0,
       });
       setAlertAction('success', 'Your book has been edited Successfully !');
-      // console.log('success');
     } else {
-      // console.log(res.msg);
       setAlertAction('error', res.msg);
     }
   };
@@ -84,7 +80,6 @@ export class EditBook extends Component {
   handleBookSelect = (e) => {
     const { bookList } = this.props;
     const book = bookList?.find((book) => book.id === parseInt(e.target.value));
-    // console.log('author id is' + book.author_id);
     this.setState({
       editedBook: book.id,
       title: book.title,
@@ -105,9 +100,7 @@ export class EditBook extends Component {
           labelId="demo-simple-select-label"
           name="editedBook"
           value={editedBook}
-          // defaultValue="0"
           onChange={this.handleBookSelect}
-          // style={{ width: '100%', height: '3.5rem', display: 'block' }}
         >
           <MenuItem value="0" disabled>
             Book

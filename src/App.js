@@ -7,7 +7,7 @@ import Authors from './pages/Authors/Authors';
 import Management from './pages/Management/Management';
 import Profile from './pages/Profile/Profile';
 import Register from './pages/Register';
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
 import './App.css';
 
 export class App extends Component {

@@ -1,5 +1,8 @@
 import React from 'react';
 
+const fillColor = 'var(--secondary-color)';
+const strokeColor = 'var(--third-color)';
+
 const LoadingSpinner = () => {
   return (
     <svg
@@ -15,14 +18,14 @@ const LoadingSpinner = () => {
     >
       <path
         d="M20 25L80 25L80 75L20 75Z"
-        fill="#a29f15"
-        stroke="#510d0a"
+        fill={fillColor}
+        stroke={strokeColor}
         strokeWidth="3"
       ></path>
       <path
         d="M50 25L80 25L80 75L50 75"
-        fill="#a29f15"
-        stroke="#510d0a"
+        fill={fillColor}
+        stroke={strokeColor}
         strokeWidth="3"
         strokeLinejoin="round"
         strokeLinecap="round"
@@ -46,8 +49,8 @@ const LoadingSpinner = () => {
       </path>
       <path
         d="M50 25L80 25L80 75L50 75"
-        fill="#a29f15"
-        stroke="#510d0a"
+        fill={fillColor}
+        stroke={strokeColor}
         strokeWidth="3"
         strokeLinejoin="round"
         strokeLinecap="round"
@@ -71,8 +74,8 @@ const LoadingSpinner = () => {
       </path>
       <path
         d="M50 25L80 25L80 75L50 75"
-        fill="#a29f15"
-        stroke="#510d0a"
+        fill={fillColor}
+        stroke={strokeColor}
         strokeWidth="3"
         strokeLinejoin="round"
         strokeLinecap="round"
@@ -96,8 +99,8 @@ const LoadingSpinner = () => {
       </path>
       <path
         d="M50 25L80 25L80 75L50 75"
-        fill="#a29f15"
-        stroke="#510d0a"
+        fill={fillColor}
+        stroke={strokeColor}
         strokeWidth="3"
         strokeLinejoin="round"
         strokeLinecap="round"
@@ -121,8 +124,8 @@ const LoadingSpinner = () => {
       </path>
       <path
         d="M50 25L80 25L80 75L50 75"
-        fill="#a29f15"
-        stroke="#510d0a"
+        fill={fillColor}
+        stroke={strokeColor}
         strokeWidth="3"
         strokeLinejoin="round"
         strokeLinecap="round"
@@ -146,8 +149,8 @@ const LoadingSpinner = () => {
       </path>
       <path
         d="M50 25L80 25L80 75L50 75"
-        fill="#a29f15"
-        stroke="#510d0a"
+        fill={fillColor}
+        stroke={strokeColor}
         strokeWidth="3"
         strokeLinejoin="round"
         strokeLinecap="round"
