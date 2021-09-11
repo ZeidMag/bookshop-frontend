@@ -2,7 +2,7 @@
 
 ### Live project [https://zeidmagboub.ly](https://zeidmagboub.ly)
 
-### Frontend repo [https://github.com/ZeidMag/bookshop-frontend](https://github.com/ZeidMag/bookshop-frontend/tree/cakeV4changes)
+### Frontend repo [https://github.com/ZeidMag/bookshop-frontend](https://github.com/ZeidMag/bookshop-frontend)
 
 ### Backend repo [https://github.com/ZeidMag/bookshop](https://github.com/ZeidMag/bookshopCakeV4)
 
