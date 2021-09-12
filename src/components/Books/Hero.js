@@ -20,11 +20,13 @@ export class Hero extends Component {
             color="textPrimary"
             gutterBottom
             className="gradient__text font-anton"
-            style={{ fontSize: '5.5rem' }}
+            style={{ fontSize: '5rem' }}
           >
             Bookshop
           </Typography>
-          <img src={Logo} alt="logo" />
+          <div style={{ width: 'min(500px, 90%)', margin: '0 auto' }}>
+            <img src={Logo} alt="logo" style={{ width: '100%' }} />
+          </div>
           <Typography
             variant="h5"
             align="center"

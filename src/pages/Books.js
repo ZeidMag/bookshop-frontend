@@ -75,8 +75,15 @@ export class Books extends Component {
             handleChange={this.handleChange}
             searchText={this.state.searchText}
           />
-          <div className="flex justify-center">
-            <img src={noConnection} alt="no connection" />
+          <div
+            className="flex justify-center"
+            style={{ width: 'min(500px, 90%)', margin: '0 auto' }}
+          >
+            <img
+              src={noConnection}
+              alt="no connection"
+              style={{ width: '100%' }}
+            />
           </div>
         </>
       );
