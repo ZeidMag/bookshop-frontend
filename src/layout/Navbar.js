@@ -39,8 +39,6 @@ class TempNavbar extends Component {
     const { anchorEl } = this.state;
     const open = Boolean(anchorEl);
     const { user } = this.props;
-    // const user = sessionStorage.getItem('id');
-    // console.log(user || 'user doenst exist');
     return (
       <AppBar position="sticky">
         <Toolbar

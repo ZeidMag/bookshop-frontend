@@ -37,7 +37,6 @@ export class RentBookModal extends Component {
     const { bookId, userId, addRentBookAction, handleClose, setAlertAction } =
       this.props;
     this.setState({ isLoading: true });
-    //change to proper userid
     const res = await addRentBookAction(userId, bookId, value);
     if (res.success) {
       this.setState({
@@ -117,7 +116,7 @@ export class RentBookModal extends Component {
     );
   }
 }
-// get userId from redux store
+
 const mapStateToProps = (state) => {
   return {
     userId: state.user.user.id,

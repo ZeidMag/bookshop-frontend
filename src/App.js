@@ -21,8 +21,7 @@ export class App extends Component {
               <Route exact path="/" component={Books} />
               <Route path="/author" component={Authors} />
               <PrivateRoute path="/management" component={Management} />
-              {/* <PrivateRoute path="/profile" component={Profile} /> */}
-              <Route path="/profile" component={Profile} />
+              <PrivateRoute path="/profile" component={Profile} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
             </Switch>

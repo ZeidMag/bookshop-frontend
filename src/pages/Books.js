@@ -7,8 +7,6 @@ import BooksCards from '../components/Books/BooksCards/BooksCards';
 import LoadingSpinner from '../utility/components/LoadingSpinner';
 import noConnection from '../assets/images/no-connection.png';
 
-//temp
-
 export class Books extends Component {
   constructor() {
     super();

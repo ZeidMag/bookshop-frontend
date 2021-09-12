@@ -50,16 +50,7 @@ export class AddAuthor extends Component {
               value={author}
               onChange={this.handleChange}
             />
-            {/* <Button
-              type="submit"
-              value="Submit"
-              variant="contained"
-              color="primary"
-              size="large"
-              style={{ padding: '1em', marginTop: '6px', width: '30%' }}
-            >
-              Add
-            </Button> */}
+
             <div className="flex justify-center align-items-center">
               <Button
                 type="submit"

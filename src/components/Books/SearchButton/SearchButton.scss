@@ -1,11 +1,9 @@
 :root {
-  // --clr-primary: #71ee52;
   --clr-body: #333;
   --clr-bg: #ddd;
 }
 
 .content {
-  // background: white;
   width: 40vw;
   padding: 1em;
   margin: 0 auto;
@@ -70,17 +68,6 @@
   }
 
   .search__submit {
-    // background: var(--clr-primary);
-    // color: white;
     display: none;
-    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    // transition: transform 500ms ease-out;
-
-    // &:hover,
-    // &:focus {
-    //   outline: 0;
-    //   // transform: rotate(1turn);
-    //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
-    // }
   }
 }

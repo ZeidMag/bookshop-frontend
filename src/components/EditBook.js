@@ -194,16 +194,6 @@ export class EditBook extends Component {
             value={imageUrl}
             onChange={this.handleChange}
           />
-          {/* <Button
-            type="submit"
-            value="Submit"
-            disabled={!editedBook}
-            variant="contained"
-            color="primary"
-            fullWidth
-          >
-            EDIT
-          </Button> */}
           <div className="flex justify-center">
             <Button
               type="submit"

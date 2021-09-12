@@ -25,7 +25,6 @@ export const getAuthors = () => {
 };
 
 export const addAuthor = (body) => {
-  // console.log(body);
   return async (dispatch) => {
     const res = await postRequest('/cake/authors/add', body);
     if (res?.success && res?.data?.response?.success) {

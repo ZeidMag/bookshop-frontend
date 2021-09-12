@@ -22,7 +22,6 @@ export const postRequest = async (url, body) => {
     }
     throw new Error();
   } catch (error) {
-    // todo: make more meaningful errors
     return { success: false, msg: 'Error occured while loading data ...' };
   }
 };
@@ -35,7 +34,6 @@ export const patchRequest = async (url, body) => {
     }
     throw new Error();
   } catch (error) {
-    // todo: make more meaningful errors
     return { success: false, msg: 'Error occured while loading data ...' };
   }
 };
@@ -48,7 +46,6 @@ export const deleteRequest = async (url) => {
     }
     throw new Error();
   } catch (error) {
-    // todo: make more meaningful errors
     return { success: false, msg: 'Error occured while loading data ...' };
   }
 };

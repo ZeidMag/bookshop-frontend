@@ -78,7 +78,6 @@ class Authors extends Component {
           width: '100%',
           maxWidth: '20rem',
           margin: '0 auto',
-          // backgroundColor: '#ccc',
         }}
       >
         <Typography
